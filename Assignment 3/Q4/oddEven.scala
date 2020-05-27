@@ -1,28 +1,10 @@
 object oddEven extends App{
-    def printOdd(i:Int, n:Int){
-        if(i > n)
-            return;
-
-        if(i%2 == 1)
-            printf("%d  ", i);
-
-        printOdd(i+1, n);
+    def checkOddEven (n:Int):String={
+        if (n == 0) "Even";
+        if (n == 1) "Odd";
+        checkOddEven(n-2);
     }
 
-    def printEven(i:Int, n:Int){
-        if(i > n)
-            return;
-
-        if(i%2 == 0)
-            printf("%d  ", i);
-
-        printEven(i+1, n);
-    }
-    printf("Odd numbers : ");
-    printOdd(0,10);
-
-    printf("\nEven numbers : ");
-    printEven(0,10);
-
-    printf("\n");
+    printf("%d : %s\n", 15, checkOddEven(15));
+    printf("%d : %s\n", 14, checkOddEven(14));
 }
